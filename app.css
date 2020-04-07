@@ -1,13 +1,30 @@
 body {
 	padding: 0;
 	margin: 0;
-	background: #cccccc;
-	color: #000000;
+	background: #ebe2d8;
+	color: #ff0000;
 }
 
-canvas {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+main {
+	width: 100vw;
+	height: calc(100vh - 80px);
+	display: flex;
+	align-items: center;
 }
+
+#canvas-container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.actions {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 80px;
+}
+
+.actions * + * {
+	margin-left: 1rem;
+}
+

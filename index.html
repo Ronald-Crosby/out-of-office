@@ -7,10 +7,18 @@
   <title>Good Morning</title>
   <link rel="stylesheet" href="./app.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
-  <script src="sketch.js"></script>
 </head>
 
 <body>
+  <div class="actions">
+    <input class="wave-slider" type="range" min="0.05" max="0.3" default="0.1" step="0.00005">
+    <input class="line1" type="text" value="Hello">
+    <input class="line2" type="text" value="Darling">
+  </div>
+  <main>
+    <div id="canvas-container"></div>
+  </main>
+  <script src="sketch.js"></script>
 </body>
 
 </html>
