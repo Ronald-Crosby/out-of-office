@@ -7,6 +7,8 @@ let width = canvasDiv.offsetWidth;
 const waveSlider = document.querySelector('.wave-slider')
 const inputLine1 = document.querySelector('.line1')
 const inputLine2 = document.querySelector('.line2')
+const xSlider = document.querySelector('.x-slider')
+const ySlider = document.querySelector('.y-slider')
 
 function preload() {
 	font = loadFont('spacegrotesk-medium.otf')
@@ -27,8 +29,11 @@ function draw() {
 		for (let y = 0; y < 60; y++) {
 
 			const wave = waveSlider.value
-			const distortionX = sin((frameCount * wave) + (x * 0.5) + (y * 0.1)) * 10
-			const distortionY = sin((frameCount * wave) + (x * 0.3) + (y * 0.3)) * 5
+			const multiplerX = xSlider.value
+			const multiplerY = ySlider.value
+
+			const distortionX = sin((frameCount * wave) + (x * 0.5) + (y * 0.1)) * multiplerX
+			const distortionY = sin((frameCount * wave) + (x * 0.3) + (y * 0.3)) * multiplerY
 
 			const sx = x * tileSize + distortionX
 			const sy = y * tileSize + distortionY
