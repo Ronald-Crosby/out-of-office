@@ -26,7 +26,8 @@ function draw() {
 
   for (let i = 0; i < 12; i++) {
     // this will be between 0 and 1 depending on the x position of the mouse across the screen
-    const mousePosition = 0.9;
+    let mousePosition = winMouseX / windowWidth;
+    mousePosition = easeInOutQuint(mousePosition);
 
     const sx = 0;
     const sy = i * tileSize * mousePosition;
@@ -42,3 +43,7 @@ function draw() {
     image(graphic, dx, dy, dw, dh, sx, sy, sw, sh);
   }
 }
+
+const easeInOutQuint = function (t) {
+  return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
+};
